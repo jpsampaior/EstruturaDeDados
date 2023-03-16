@@ -11,43 +11,35 @@ public class ListaTam {
         this.size = 0;
     }
 
-    public boolean add(String elemento) {
+    public void add(String elemento) {
         NoTam novo = new NoTam(elemento);
 
-        if(!contais(elemento)) {
-            if(primeiro == null) {
+        if(primeiro == null) {
+            this.primeiro = novo;
+            this.ultimo = novo;
+        } else {
+            if(novo.dado.length() < primeiro.dado.length()) { //MenorQuePrimeiro
+                novo.proximo = this.primeiro;
+                this.primeiro.anterior = novo;
                 this.primeiro = novo;
+            } else if (novo.dado.length() > ultimo.dado.length()) { //MaiorQueUltimo
+                novo.anterior = this.ultimo;
+                this.ultimo.proximo = novo;
                 this.ultimo = novo;
-            } else {
-                if(novo.dado.length() < primeiro.dado.length()) { //MenorQuePrimeiro
-                    novo.proximo = this.primeiro;
-                    this.primeiro.anterior = novo;
-                    this.primeiro = novo;
-                } else if (novo.dado.length() > ultimo.dado.length()) { //MaiorQueUltimo
-                    novo.anterior = this.ultimo;
-                    this.ultimo.proximo = novo;
-                    this.ultimo = novo;
-                } else { //NoMeio
-                    NoTam aux = this.primeiro;
+            } else { //NoMeio
+                NoTam aux = this.primeiro;
 
-                    while (novo.dado.length() > aux.dado.length()) { //MaiorQueAux
-                        aux = aux.proximo;
-                    }
-
-                    aux.anterior.proximo = novo;
-                    novo.anterior = aux.anterior;
-                    novo.proximo = aux;
-                    aux.anterior = novo;
+                while (novo.dado.length() > aux.dado.length()) { //MaiorQueAux
+                    aux = aux.proximo;
                 }
+
+                aux.anterior.proximo = novo;
+                novo.anterior = aux.anterior;
+                novo.proximo = aux;
+                aux.anterior = novo;
             }
-            size++;
-
-            return true;
         }
-
-        else {
-            return false;
-        }
+        size++;
     }
 
     public int size() {

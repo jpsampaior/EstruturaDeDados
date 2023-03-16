@@ -119,10 +119,10 @@ public class ListaDinamicaOrdenada<T extends Comparable<T>> {
     public void show() {
         NoDuplo<T> aux = primeiro;
 
-        while (aux != null) {
+        while (aux.proximo != null) {
             System.out.print(aux.dado+" ");
             aux = aux.proximo;
         }
-        System.out.println();
+        System.out.println(aux);
     }
 }

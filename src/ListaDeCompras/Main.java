@@ -16,6 +16,7 @@ public class Main {
                 ordenada.add(compras[j]);
             }
             ordenada.show();
+            ordenada.clear();
         }
 
     }
