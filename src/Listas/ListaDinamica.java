@@ -109,7 +109,7 @@ public class ListaDinamica<T> {
     public T get(int index) {
         No<T> aux = primeiro;
 
-        for (int i = 0; i < index - 1; i++) {
+        for (int i = 0; i < index; i++) {
             aux = aux.proximo;
         }
 
