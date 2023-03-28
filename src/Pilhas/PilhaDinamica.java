@@ -37,6 +37,12 @@ public class PilhaDinamica<T> {
         return aux.dado;
     }
 
+    public boolean empty() {
+        if(topo == null) {
+            return true;
+        } else return false;
+    }
+
     @Override
     public String toString() {
         String print = "[";
