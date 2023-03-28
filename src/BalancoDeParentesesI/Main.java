@@ -17,10 +17,10 @@ public class Main {
                 if(ch == '(') {
                     stack.push(ch);
                 } else if (ch == ')') {
-                    try {
-                        stack.pop();
-                    } catch (Exception ex) {
+                    if(stack.empty()) {
                         tf = false;
+                    } else {
+                        stack.pop();
                     }
                 }
             }

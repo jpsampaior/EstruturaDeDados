@@ -18,14 +18,14 @@ public class PilhaDinamica<T> {
     }
 
     public void pop() {
-        if(this.topo == null) {
-            this.topo = null;
+        No<T> aux = topo;
+        if(aux.proximo == null) {
+            topo = null;
         } else {
-            No<T> aux = this.topo;
-            while (aux.proximo.proximo!=null) {
+            while(aux.proximo.proximo != null) {
                 aux = aux.proximo;
             }
-            aux.proximo=null;
+            aux.proximo = null;
         }
     }
 

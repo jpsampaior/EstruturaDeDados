@@ -5,8 +5,8 @@ public class Main {
         PilhaDinamica<Integer> stack = new PilhaDinamica<>();
 
         stack.push(1);
+        stack.push(1);
         stack.pop();
         System.out.println(stack.empty());
-        System.out.println(stack);
     }
 }
