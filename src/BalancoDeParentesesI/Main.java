@@ -7,9 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner dado = new Scanner(System.in);
-        PilhaDinamica<Character> stack = new PilhaDinamica<>();
+
 
         while(dado.hasNext()) {
+            PilhaDinamica<Character> stack = new PilhaDinamica<>();
             String expression = dado.nextLine();
             boolean tf = true;
             for(int i = 0; i < expression.length(); i++) {
