@@ -31,6 +31,7 @@ public class PilhaDinamica<T> {
 
     public T peek() {
         No<T> aux = this.topo;
+
         while (aux.proximo!=null) {
             aux = aux.proximo;
         }
@@ -56,5 +57,4 @@ public class PilhaDinamica<T> {
 
         return print;
     }
-
 }
