@@ -70,9 +70,9 @@ public class Main {
                 } else {
                     System.out.println("No");
                 }
-                System.out.println();
             } else {
                 qtdVagoes = Integer.parseInt(dado.next());
+                System.out.println();
             }
         }
     }

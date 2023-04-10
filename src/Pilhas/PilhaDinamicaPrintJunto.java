@@ -1,6 +1,6 @@
 package Pilhas;
 
-public class PilhaDinamica<T> {
+public class PilhaDinamicaPrintJunto<T> {
     private No<T> topo;
     private int size = 0;
 
@@ -53,14 +53,14 @@ public class PilhaDinamica<T> {
 
     @Override
     public String toString() {
-        String print = "[";
+        String print = "";
 
         No<T> aux = this.topo;
         while (aux.proximo!=null) {
-            print+= aux.dado+", ";
+            print+= aux.dado;
             aux = aux.proximo;
         }
-        print+= aux.dado+"]";
+        print+= aux.dado;
 
         return print;
     }

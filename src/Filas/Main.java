@@ -2,15 +2,13 @@ package Filas;
 
 public class Main {
     public static void main(String[] args) {
-        FilaEstatica<Integer> fila = new FilaEstatica();
+        FilaPrioridadeO<Integer> fila = new FilaPrioridadeO();
 
-        fila.enqueue(1);
-        fila.show();
-        fila.enqueue(2);
-        fila.show();
-        fila.enqueue(3);
-        fila.show();
-        fila.enqueue(4);
-        fila.show();
+        fila.enqueue(1,1);
+        System.out.println(fila);
+        fila.enqueue(3,3);
+        System.out.println(fila);
+        fila.enqueue(2,2);
+        System.out.println(fila);
     }
 }
