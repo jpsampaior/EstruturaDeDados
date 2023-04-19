@@ -51,11 +51,9 @@ public class FilaNONumTrocas<T> {
             } else if (ultimo.equals(prioritario)){
                 ultimo = ultimo.anterior;
                 ultimo.proximo = null;
-                trocas++;
             } else {
                 prioritario.anterior.proximo = prioritario.proximo;
                 prioritario.proximo.anterior = prioritario.anterior;
-                trocas++;
             }
         }
     }
