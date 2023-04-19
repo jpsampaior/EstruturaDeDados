@@ -74,7 +74,7 @@ public class FilaPrioridadeO<T> {
 
     @Override
     public String toString() {
-        String print = "[";
+        String print = "";
         NoPrioridade<T> aux = this.primeiro;
 
         while (aux.proximo!=null) {
@@ -82,7 +82,7 @@ public class FilaPrioridadeO<T> {
             aux = aux.proximo;
         }
 
-        print+= aux.dado+"]";
+        print+= aux.dado;
         return print;
     }
 }

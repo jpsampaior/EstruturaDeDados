@@ -62,11 +62,11 @@ public class FilaMaiorO<T> {
         return saida.dado;
     }
 
-    public T peek() {
+    public NoPrioridade<T> peek() {
         if(primeiro == null) {
             throw new EmptyStackException();
         }
-        return primeiro.dado;
+        return primeiro;
     }
 
     public int size() {
