@@ -1,6 +1,7 @@
 package FilaDoRecreio;
 
-import Filas.FilaMaiorONumTrocas;
+import Filas.FilaMaiorO;
+import Listas.ListaEstatica;
 
 import java.util.Scanner;
 
@@ -10,20 +11,33 @@ public class Main {
         int qtdCasos;
         int numEstudantes;
         int nota;
-        FilaMaiorONumTrocas<Integer> fila;
+        int fixos;
+
+        FilaMaiorO<Integer> fila;
+        ListaEstatica<Integer> original;
 
         qtdCasos = dado.nextInt();
 
         for(int i = 0; i < qtdCasos; i++) {
-            fila = new FilaMaiorONumTrocas();
+            fixos = 0;
+            fila = new FilaMaiorO();
+            original = new ListaEstatica<>();
             numEstudantes = dado.nextInt();
 
             for(int j = 0; j < numEstudantes; j++) {
                 nota = Integer.parseInt(dado.next());
                 fila.enqueue(nota,nota);
+                original.add(nota);
             }
 
-            System.out.println(fila.getTrocas());
+            for(int j = 0; j < numEstudantes; j++) {
+                if(fila.peek().equals(original.get(j))) {
+                    fixos++;
+                }
+                fila.dequeue();
+            }
+
+            System.out.println(fixos);
         }
     }
 }
