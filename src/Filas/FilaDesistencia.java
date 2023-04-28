@@ -53,7 +53,7 @@ public class FilaDesistencia<T> {
         } else {
             No aux = this.primeiro;
 
-            while(aux.dado!=dado || aux.proximo!=null) {
+            while(!aux.dado.equals(dado)) {
                 aux = aux.proximo;
             }
 
