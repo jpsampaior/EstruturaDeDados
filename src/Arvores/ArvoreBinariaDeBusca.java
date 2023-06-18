@@ -31,6 +31,9 @@ public class ArvoreBinariaDeBusca {
                 adicionar(elemento, raiz.direito);
             }
         }
+
+        //verificação do balanceamento
+        
     }
 
     public boolean busca(int elemento) {
